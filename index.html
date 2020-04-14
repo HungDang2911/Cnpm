@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="game-screen">
+        <div id="nav-bar">
+            <div id="score-bar">
+                <div class="score-ball-wrapper f-left">
+                    <img src="./img/score-ball.png">
+                </div>
+                <div class="score-ball-wrapper f-left">
+                    <img src="./img/score-ball.png">
+                </div>
+                <div class="score-ball-wrapper f-left">
+                    <img src="./img/score-ball.png">
+                </div>
+                <div class="score-ball-wrapper f-left">
+                    <img src="./img/score-ball.png">
+                </div>
+            </div>
+        </div>
+        <div id="play-screen">
+            <button id = "start-btn">Start</button>
+            <h1>Find all the round numbers</h1>
+            <h2>Move them to the box</h2>
+            <div id="numbers-row">
+                <span class="number" draggable="true">45</span>
+            </div>
+            <div id="plate">
+                <div id="plate-wrapper">
+                    <div class="number-slot"></div>
+                    <div class="number-slot"></div>
+                    <div class="number-slot"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./game.js"></script>
+</body>
+</html>

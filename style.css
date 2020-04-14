@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('./img/bg.jpg');
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-size: 45px;
+    line-height: 45px;
+}
+
+h2 {
+    font-size: 29px;
+    color: #7f7f7f;
+    line-height: 35px;
+}
+
+#game-screen {
+    width: 950px;
+    height: 600px;
+    background-color: white;
+    margin: 15px auto;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #444;
+}
+
+#nav-bar {
+    border-bottom: 1px solid #ccc;
+    height: 50px;
+    position: relative;
+}
+
+#score-bar {
+    width: 450px;
+    height: 25px;
+    border-radius: 40px;
+    background-color: #ededed;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 2px #444 inset;
+}
+
+.score-ball-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 26px;
+    height: 25px;
+    float: left;
+    transition: all 0.5s;
+}
+
+.score-ball-wrapper img{
+    width: 21px;
+    height: 21px;
+}
+
+.score-ball-right {
+    transform: translateX(345px);
+}
+
+#play-screen {
+    height: 550px;
+    border-radius: 15px;
+    width: 100%;
+    padding: 10px;
+}
+
+#numbers-row {
+    height: 80px;
+    width: 600px;
+    margin: 70px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.number {
+    font-size: 30px;
+    font-weight: 700;
+    height: 70px;
+    width: 70px;
+    line-height: 70px;
+    background-color: #4dff00;
+    margin: 5px;
+    border-radius: 70px;
+}
+
+#plate {
+    background-color: #FFF4DC;
+    border-radius: 20px;
+}
+
+.number-slot {
+    
+}
