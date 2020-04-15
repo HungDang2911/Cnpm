@@ -6,23 +6,24 @@ const NUM_OF_NUMBERS = NUM_OF_ROUND_NUMBERS + NUM_OF_NOT_ROUND_NUMBERS;
 const MAX_SCORE = 4;
 
 let score = 0;
+let numbersOnPlate = 0;
 
 document.getElementById("start-btn").addEventListener("click", () => {
     clearScreen();
     newGameStage();
-    increaseScore();
 });
 
-
+initDragAndDropNumbers();
 
 function newGameStage() {
     let roundNumbers = getRoundNumbers();
     let notRoundNumbers = getNotRoundNumbers();
     let numbers = roundNumbers.concat(notRoundNumbers);
     numbers.sort();
+    numbersOnPlate = 0;
 
     addNumbersToDOM(numbers);
-    addNumbersEvent();
+    
 }
 
 function clearScreen () {
@@ -73,11 +74,16 @@ function addNumbersToDOM(numbersArr) {
     }
 }
 
-function addNumbersEvent() {
+function initDragAndDropNumbers() {
     let numberElements = document.getElementsByClassName("number");
+    let plate = document.getElementById("plate");
+    
     for (let i = 0; i < NUM_OF_NUMBERS; i++) {
         numberElements[i].addEventListener("dragstart", drag);
     }
+    
+    plate.addEventListener("dragover", allowDrop);
+    plate.addEventListener("drop", drop);
 }
 
 function drag(event) {
@@ -85,9 +91,10 @@ function drag(event) {
 }
 
 function drop(event) {
+    numbersOnPlate++;
     event.preventDefault();
     let data = event.dataTransfer.getData("text");
-    event.target.appendChild(document.getElementById(data));
+    document.getElementById(`number-slot-${numbersOnPlate}`).appendChild(document.getElementById(data));
 }
 
 function allowDrop(event) {

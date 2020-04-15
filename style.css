@@ -82,6 +82,11 @@ h2 {
     justify-content: space-between;
 }
 
+.number-wrapper {
+    height: 80px;
+    width: 500px;
+}
+
 .number {
     font-size: 30px;
     font-weight: 700;
@@ -90,14 +95,27 @@ h2 {
     line-height: 70px;
     background-color: #4dff00;
     margin: 5px;
-    border-radius: 70px;
+    /* border-radius: 70px; */
 }
 
 #plate {
     background-color: #FFF4DC;
+    width: 300px;
+    height: 120px;
     border-radius: 20px;
+    margin: 0 auto;
+}
+
+#plate-wrapper {
+    background-color: blue;
+    width: 270px;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .number-slot {
-    
+    height: 70px;
+    width: 70px;
+    background-color: black;
 }
