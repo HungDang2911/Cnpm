@@ -1,0 +1,120 @@
+
+#body{
+    width: 1200px;
+}
+#toolbar{
+    height: 100px;
+}
+#score-bar{
+    margin-left: 150px;
+
+}
+#score-ball-1{
+    margin-left: -500px;
+    
+}
+.score-ball{
+    position:relative;
+     
+}
+#language{
+    float: right;
+}
+#instruct{
+    height: 80px;
+    font-size: 25px;
+    margin-right: -180px;
+
+}
+#back-btn-1{
+
+    color: black;
+    font-size: 30px;
+    border-radius: 50%;
+    margin-left: 150px;
+    
+}
+
+
+#back-btn-1:hover {
+    color: #c76565;
+}
+
+#language {
+    float:right;
+    padding: 13px 25px;
+    color: #246EA1;
+}
+.blank{
+    width: 60px;
+    height: 60px;
+    margin-top: 30px;
+    font-size: 45px;
+}
+#music-btn{
+    float: left;
+    margin-left: 180px;
+    border-radius: 50%;
+}
+#blank-2{
+    width: 30px;
+}
+#main{
+    margin-left: 450px;
+   
+}
+li{
+    list-style-type: none;
+    float: left;
+    margin: 10px;
+}
+.math{
+    font-size: 45px;
+}
+#check-btn{
+   margin-top: 100px;
+    margin-left: -280px;
+    border-radius: 100%;
+    font-size: 35px;
+    color: teal;
+}
+#start-btn{
+    font-size: 50px;
+    
+    border-radius: 5px;
+    margin-left: 550px;
+}
+#start-img{
+    margin-bottom: -330px;
+}
+#play-scr{
+    display: none;
+    border-radius: 5px;
+    color: black;
+}
+#chat-border{
+    text-align: center;}
+#inform{
+   margin-top :-80px;
+   font-size: 25px;
+   margin-right: -20px;
+}
+#ending-scr{
+    display: none;
+    width: 1350px;
+    height: 600px;
+}
+#ending-text{
+    margin-top: 200px;
+    font-size: 60px;
+    margin-left: 300px;
+    
+}
+#back-btn-2{
+    border-radius: 50%;
+    font-size: 30px;
+    border-color: rebeccapurple
+}
+#back-btn-2:hover{
+    color: red;
+}
