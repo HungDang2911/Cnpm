@@ -1,0 +1,66 @@
+#game-lay-out{
+    width: 1300px;
+    height: 700px;
+    text-align: center;
+    
+}
+#tool-bar{
+    height: 60px;
+}
+#back-btn{
+    float: left;
+    font-size: 30px;
+}
+#language{
+    float: right;
+    font-size: 25px;
+}
+#point-bar{
+    height: 70px;
+    color: #000;
+}
+#instruct{
+    height: 50px;
+    color:red;
+}
+#one-coin-col {
+    float: left;
+    width: 100px;
+    height: 500px;
+    margin-left: 100px;
+    margin-right: 50px;
+}
+#one-coin{
+    margin-bottom: -25px;
+}
+#ten-coin-col {
+    float: left;
+    width: 100px;
+    height: 650px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+#ten-coin{
+    margin-bottom: -40px;
+}
+#tray {
+    margin-top: 200px;
+    float: left;
+    width: 350px;
+    height: 250px;
+    margin-left: 50px;
+    border: 1px solid black;
+}
+#buy-btn{
+    margin-top: 470px;
+    margin-left: -800px;
+    font-size: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#but-btn:hover{
+    color: tomato;
+}
+li{
+    list-style-type: none;
+}
