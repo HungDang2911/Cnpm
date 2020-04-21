@@ -14,12 +14,15 @@ function allowDrop(ev) {
 
   function createPrice(){
     var rand = Math.floor(Math.random() * 90 + 10); 
-    document.getElementById("price").innerHTML = "Giá tiền: <br>"  + rand + "$";
+    document.getElementById("price").innerHTML = "Giá: <br>"  + rand + "$";
   }
 
   function buy(callback){
     document.getElementById("buy-btn").addEventListener('click',callback);
   }
 
+  function caculate(){
+    
+  }
 
   createPrice();
