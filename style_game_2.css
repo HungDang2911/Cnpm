@@ -23,17 +23,26 @@ li{
     float: right;
     font-size: 25px;
 }
+#point-bar li{
+    float: left;
+}
 #point-bar{
-    height: 60px;
-    color: #000;
-    margin-top: -60px;
-    margin-left: -20px;
+    margin-top: -30px;
+    margin-left: -30px;
+    margin-bottom: 10px;
+}
+.point-section{
+    width: 145px;
+    height: 20px;
+    background-color: turquoise;
+    opacity: 0.8;
 }
 
 #instruct{
     height: 50px;
     font-size: 35px;
-    margin-left: -50px;
+    margin-right: -10px;
+    margin-bottom: 10px;
     color: blue;
 }
 #one-coin-col {
@@ -45,6 +54,12 @@ li{
 }
 .one-coin{
     margin-bottom: -30px;
+}
+.one-coin:hover{
+    cursor: pointer;
+}
+.ten-coin:hover{
+    cursor: pointer;
 }
 #ten-coin-col {
     float: left;
@@ -65,7 +80,6 @@ li{
     position: absolute;
     text-align: center;
     font-size: 55px;
-    
 }
 #buy-btn{
     padding: 5px 15px 5px 15px;

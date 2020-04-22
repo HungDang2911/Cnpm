@@ -1,3 +1,9 @@
+
+var level = 9;
+var curLevel = 1 ;
+
+
+
 function allowDrop(ev) {
     ev.preventDefault();
   }
@@ -33,6 +39,9 @@ function allowDrop(ev) {
         clearInterval(id);
         resetScreen();
         createPrice();
+        addPoint(curLevel);
+        buy(rightPrice);
+        curLevel++;
       } else {
         pos++; 
         elem.style.top = pos + "px"; 
@@ -40,6 +49,10 @@ function allowDrop(ev) {
     }
   }
 
+  function addPoint(level){
+    var curPointSection = "point-section-" + level
+    document.getElementById(curPointSection).style.background = 'blue';
+  }
   
   function wrongPrice(){
     var elem = document.getElementById("tray");   
@@ -48,10 +61,10 @@ function allowDrop(ev) {
     elem.style.background = 'red';
     elem.style.opacity = '0.8';
     
-    var pos = 0;
+    var pos = 100;
     var id = setInterval(frame, 10);
     function frame() {
-      if (pos == 150) {
+      if (pos == 200) {
         clearInterval(id);
         resetScreen();
         createPrice();
@@ -71,5 +84,9 @@ function allowDrop(ev) {
 	  html = document.getElementById('play-scr').innerHTML;
 };     
 
+  function checkPrice(){
+      
+  }
+
   createPrice();
-  buy(wrongPrice);
+  buy(rightPrice);
