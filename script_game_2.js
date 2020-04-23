@@ -1,7 +1,8 @@
 
 var level = 9;
-var curLevel = 1 ;
-
+var curLevel = 0 ;
+var sum = 0;
+var curPrice ;
 
 
 function allowDrop(ev) {
@@ -16,10 +17,18 @@ function allowDrop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
+
+    if(data == 'one-coin'){
+      sum += 1;
+    }else{
+      sum += 10;
+    }
+
   }
 
   function createPrice(){
     var rand = Math.floor(Math.random() * 90 + 10); 
+    curPrice = rand;
     document.getElementById("price").innerHTML = "Giá: <br>"  + rand + "$";
   }
 
@@ -39,9 +48,10 @@ function allowDrop(ev) {
         clearInterval(id);
         resetScreen();
         createPrice();
-        addPoint(curLevel);
-        buy(rightPrice);
         curLevel++;
+        addPoint(curLevel);
+        buy(checkPrice);
+        sum = 0;
       } else {
         pos++; 
         elem.style.top = pos + "px"; 
@@ -68,6 +78,9 @@ function allowDrop(ev) {
         clearInterval(id);
         resetScreen();
         createPrice();
+        buy(checkPrice);
+        addPoint(curLevel);
+        sum = 0;
       } else {
         pos++; 
         elem.style.top = pos + "px"; 
@@ -85,8 +98,14 @@ function allowDrop(ev) {
 };     
 
   function checkPrice(){
-      
+    if( sum == curPrice ){
+      rightPrice();
+    }else{
+      wrongPrice();
+    }
   }
 
+  
   createPrice();
-  buy(rightPrice);
+  buy(checkPrice);
+  
