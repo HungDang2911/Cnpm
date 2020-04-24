@@ -7,6 +7,39 @@
     text-align: center;
     background: url("images_game_2/backgr.png") ;
     background-size: 1340px 720px;
+    display: none ;
+}
+#loading-bar{
+    background-color: black;
+    width:50px;
+    height:50px;
+    position:relative;
+    animation-name: move;
+    animation-duration:3.3s;
+    display: none;
+}
+@keyframes move{
+    0%   {top: 0px; background: black; width: 76px; left: 493px;}
+    25%   {top: 0px; background: black; width: 160px; left: 493px;}
+    75%   {top: 0px; background: black; width: 245px; left: 493px;}
+    100% {top: 0px; background: black; width: 335px; left: 493px;}
+}
+#start-img{
+    margin-bottom: -250px;
+}
+#start-btn{
+    border-radius: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 35px;
+    margin-left: 580px;
+    margin-bottom: 30px;
+}
+#start-btn:hover{
+    color: mediumblue;
+    background-color: palegreen;
 }
 li{
     list-style-type: none;
@@ -99,4 +132,23 @@ li{
     margin-right: -250px;
     margin-top: -180px;
     font-size: 45px;
+}
+#ending-scr{
+    display: none;
+}
+#ending-message{
+    font-size: 45px;
+    margin-left: 80px;
+    margin-top: 250px;
+}
+#back-btn-2{
+    font-size: 30px;
+    border-radius: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-bottom: 5px;
+}
+#ending-img{
+    margin-bottom: -640px;
 }

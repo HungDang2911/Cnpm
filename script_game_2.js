@@ -3,7 +3,7 @@ var level = 9;
 var curLevel = 0 ;
 var sum = 0;
 var curPrice ;
-
+var failTimes = 0;
 
 function allowDrop(ev) {
     ev.preventDefault();
@@ -24,6 +24,18 @@ function allowDrop(ev) {
       sum += 10;
     }
 
+  }
+
+  function start(callback){
+    document.getElementById("start-btn").addEventListener('click',callback);
+  }
+  
+  function play(){
+    document.getElementById("loading-bar").style.display = 'block';
+    setTimeout(function(){
+      document.getElementById("play-scr").style.display = 'block';
+      document.getElementById("start-scr").style.display = 'none';
+    }, 3000);
   }
 
   function createPrice(){
@@ -48,10 +60,12 @@ function allowDrop(ev) {
         clearInterval(id);
         resetScreen();
         createPrice();
+        sum = 0;
         curLevel++;
+        checkEndGame();
         addPoint(curLevel);
         buy(checkPrice);
-        sum = 0;
+        
       } else {
         pos++; 
         elem.style.top = pos + "px"; 
@@ -78,9 +92,10 @@ function allowDrop(ev) {
         clearInterval(id);
         resetScreen();
         createPrice();
-        buy(checkPrice);
-        addPoint(curLevel);
         sum = 0;
+        buy(checkPrice);
+        failTimes ++;
+        addPoint(curLevel);
       } else {
         pos++; 
         elem.style.top = pos + "px"; 
@@ -105,7 +120,19 @@ function allowDrop(ev) {
     }
   }
 
-  
+  function checkEndGame(){
+    if (curLevel == level){
+      endGame();
+    }
+  }
+
+  function endGame(){
+    document.getElementById("play-scr").style.display = 'none';
+    document.getElementById("ending-message").innerHTML ="Chúc mừng bạn đã hoàn thành màn chơi với "+ failTimes +" lần sai !";
+    document.getElementById("ending-scr").style.display = 'block';
+  }
+
+  start(play);
   createPrice();
   buy(checkPrice);
   
