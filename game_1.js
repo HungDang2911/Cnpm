@@ -5,7 +5,7 @@ const NUM_OF_ROUND_NUMBERS = 3;
 const NUM_OF_NUMBERS = NUM_OF_ROUND_NUMBERS + NUM_OF_NOT_ROUND_NUMBERS;
 const MAX_SCORE = 4;
 const LANGUAGES = {
-    problems : {
+    problem: {
         en: "Find all the round numbers",
         vi: "Tìm tất cả số tròn chục"
     },
@@ -15,22 +15,47 @@ const LANGUAGES = {
     },
     start: {
         en: "start",
-        vi: "Bắt đàu"
+        vi: "Bắt đầu"
+    },
+    languageBtn: {
+        en: "Language: English",
+        vi: "Ngôn ngữ: Tiếng Việt"
+    },
+    back: {
+        en: "Back",
+        vi: "Trở lại"
     }
 }
 
 let score = 0;
 let numbersOnPlate = 0;
+let started = false;
+let currentLanguage = 'en';
 
-document.getElementById("language").addEventListener("click", (event) => {
-    let button = event.target;
+document.getElementById("language-btn").addEventListener("click", () => {
+    const languageBtn = document.getElementById('language-btn');
+    const backBtn = document.getElementById('back-btn')
+    const startButton = document.getElementById('start-btn');
+    const problem = document.getElementById('problem');
+    const help = document.getElementById('help');
     
-    if (button.textContent === 'Language: English') console.log(true);
+    if (currentLanguage === 'en') currentLanguage = 'vi';
+    else currentLanguage = 'en';
+
+    languageBtn.textContent = LANGUAGES.languageBtn[currentLanguage];
+    backBtn.innerText = '‹ ' + LANGUAGES.back[currentLanguage];
+
+    if (!started) startButton.textContent = LANGUAGES.start[currentLanguage];
+    else {
+        problem.textContent = LANGUAGES.problem[currentLanguage];
+        help.textContent = LANGUAGES.help[currentLanguage];
+    }
 });
 
 document.getElementById("start-btn").addEventListener("click", (event) => {
     clearScreen();
     newGameStage();
+    started = true;
 });
 
 function newGameStage() {
@@ -55,7 +80,7 @@ function clearScreen () {
 
 function getRoundNumbers() {
     let res = [];
-    for(let i = 0; i < NUM_OF_ROUND_NUMBERS; i++) res.push(Math.floor(Math.random() * 10) * 10);
+    for(let i = 0; i < NUM_OF_ROUND_NUMBERS; i++) res.push(Math.floor(Math.random() * 10 + 1) * 10);
     return res;
 }
 
@@ -65,7 +90,7 @@ function getNotRoundNumbers() {
     return res;
 }
 
-function descreaseScore() {
+function decreaseScore() {
     if (score === 0) return;
     score--;
 
@@ -95,8 +120,8 @@ function addPlayScreen() {
 
 function addStaticElementsToDOM() {
     let playScreen = document.getElementById("play-screen");
-    playScreen.innerHTML = `<h1>Find all the round numbers</h1>
-                            <h2>Move them to the box</h2>
+    playScreen.innerHTML = `<h1 id="problem">${LANGUAGES.problem[currentLanguage]}</h1>
+                            <h2 id="help">${LANGUAGES.help[currentLanguage]}</h2>
                             <div id="numbers-row">               
                             </div>
                             <div id="plate">
@@ -146,7 +171,7 @@ function drop(event) {
     let chosenNumber = document.getElementById(data);
 
     if (!isRoundNumber(chosenNumber.textContent)) {
-        descreaseScore();
+        decreaseScore();
         moveNumberBack(oldSlot, chosenNumber);
         numbersOnPlate--;
     }

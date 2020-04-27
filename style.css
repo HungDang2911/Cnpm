@@ -6,7 +6,7 @@
 
 body {
     background-image: url('./img/bg.jpg');
-    font-family: 'Lato', sans-serif;
+    font-family: sans-serif;
     text-align: center;
 }
 
@@ -24,7 +24,7 @@ h2 {
 a {
     display: block;
     color: #246EA1;
-    font-weight: 1000;
+    font-weight: 700;
     padding: 13px 25px;
     font-size: 20px;
     text-decoration: none;
@@ -38,7 +38,7 @@ a {
     color: #659fc7;
 }
 
-#language {
+#language-btn {
     float:right;
 }
 
@@ -87,7 +87,7 @@ a {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    border: 45px solid red;
+    border: 45px solid #f7f7f7;
     display: grid;
     transition: all .5s;
 }
@@ -99,6 +99,15 @@ a {
 
 #start-btn {
     margin: auto;
+    font-size: 20px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #053555;
+}
+
+#start-btn-wrapper:hover #start-btn {
+    background-color: #246EA1;
 }
 
 .score-ball-wrapper {
@@ -143,7 +152,6 @@ a {
 
 .number {
     font-size: 30px;
-    font-weight: 700;
     height: 100%;
     width: 100%;
     line-height: 70px;
