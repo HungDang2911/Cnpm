@@ -80,10 +80,11 @@ li{
     color: blue;
 }
 #one-coin-col {
+    margin-top: 50px;
     float: left;
-    width: 100px;
-    height: 500px;
-    margin-left: 60px;
+    width: 70px;
+    height: 430px;
+    margin-left: 80px;
     margin-right: 50px;
 }
 .one-coin{
@@ -96,17 +97,18 @@ li{
     cursor: pointer;
 }
 #ten-coin-col {
+    margin-top: 50px;
     float: left;
     width: 100px;
-    height: 650px;
+    height: 450px;
     margin-left: 40px;
     margin-right: 50px;
-    margin-top: -10px;
 }
 .ten-coin{
     margin-bottom: -50px;
 }
 #tray {
+    border: 1px solid black;
     margin-top: 160px; 
     width: 400px;
     height: 255px;
