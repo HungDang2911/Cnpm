@@ -21,14 +21,17 @@ h2 {
     line-height: 35px;
 }
 
-#back-btn {
+a {
     display: block;
     color: #246EA1;
     font-weight: 1000;
-    float: left;
     padding: 13px 25px;
     font-size: 20px;
     text-decoration: none;
+}
+
+#back-btn {  
+    float: left;
 }
 
 #back-btn:hover {
@@ -37,8 +40,6 @@ h2 {
 
 #language {
     float:right;
-    padding: 13px 25px;
-    color: #246EA1;
 }
 
 #game-screen {
@@ -116,7 +117,7 @@ h2 {
 }
 
 .score-ball-right {
-    transform: translateX(345px);
+    transform: translateX(350px);
 }
 
 #play-screen {
