@@ -12,13 +12,23 @@ const LANGUAGES = {
     help: {
         en: "Move them to the box",
         vi: "Di chuyển các số vào ô"
+    },
+    start: {
+        en: "start",
+        vi: "Bắt đàu"
     }
 }
 
 let score = 0;
 let numbersOnPlate = 0;
 
-document.getElementById("start-btn").addEventListener("click", () => {
+document.getElementById("language").addEventListener("click", (event) => {
+    let button = event.target;
+    
+    if (button.textContent === 'Language: English') console.log(true);
+});
+
+document.getElementById("start-btn").addEventListener("click", (event) => {
     clearScreen();
     newGameStage();
 });
