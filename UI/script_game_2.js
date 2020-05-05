@@ -18,32 +18,16 @@ function allowDrop(ev) {
     let data = ev.dataTransfer.getData("text");
     let tray = document.getElementById('tray');
     tray.appendChild(document.getElementById(data));
-  
-    if(ev.target.id == 'tray'){
-      
-      if(data == 'one-coin-1' || data == 'one-coin-2' || data == 'one-coin-3'||data == 'one-coin-4' ||data == 'one-coin-5'|data == 'one-coin-6'
-        || data == 'one-coin-7' || data == 'one-coin-8'|| data == 'one-coin-9' ){
-        sum += 1;
-      }else{
-        sum += 10;
-      }
-    } 
   }
 
   function dropInOneDiv(ev) {
     ev.preventDefault();
     let data = ev.dataTransfer.getData("text");
-    let div1 = document.getElementById('one-coin-col');
-    div1.appendChild(document.getElementById(data));
+    let div1 = document.getElementById('one-coin-col')
   
-    if(ev.target.id == 'one-coin-col'){
-      
-      if(data == 'one-coin-1' || data == 'one-coin-2' || data == 'one-coin-3'||data == 'one-coin-4' ||data == 'one-coin-5'|data == 'one-coin-6'
-        || data == 'one-coin-7' || data == 'one-coin-8'|| data == 'one-coin-9' ){
-        sum -= 1;
-      }else{
-        sum -= 10;
-      }
+    if(data == 'one-coin-1' || data == 'one-coin-2' || data == 'one-coin-3'||data == 'one-coin-4' ||data == 'one-coin-5'|data == 'one-coin-6'
+      || data == 'one-coin-7' || data == 'one-coin-8'|| data == 'one-coin-9' ){
+        div1.appendChild(document.getElementById(data));
     } 
   }
 
@@ -51,16 +35,10 @@ function allowDrop(ev) {
     ev.preventDefault();
     let data = ev.dataTransfer.getData("text");
     let div10 = document.getElementById('ten-coin-col');
-    div10.appendChild(document.getElementById(data));
   
-    if(ev.target.id == 'ten-coin-col'){
-      
-      if(data == 'one-coin-1' || data == 'one-coin-2' || data == 'one-coin-3'||data == 'one-coin-4' ||data == 'one-coin-5'|data == 'one-coin-6'
-        || data == 'one-coin-7' || data == 'one-coin-8'|| data == 'one-coin-9' ){
-        sum -= 1;
-      }else{
-        sum -= 10;
-      }
+    if(data == 'ten-coin-1' || data == 'ten-coin-2' || data == 'ten-coin-3'||data == 'ten-coin-4' ||data == 'ten-coin-5'|data == 'ten-coin-6'
+      || data == 'ten-coin-7' || data == 'ten-coin-8'|| data == 'ten-coin-9' ){
+        div10.appendChild(document.getElementById(data));
     } 
   }
 
@@ -152,6 +130,10 @@ function allowDrop(ev) {
   };     
 
   function checkPrice(){
+    let tenCoinRemain = document.getElementById("ten-coin-col").childElementCount;
+    let oneCoinRemain = document.getElementById("one-coin-col").childElementCount;
+    sum = (9-tenCoinRemain)*10 + (9-oneCoinRemain) ;
+
     if( sum == curPrice ){
       rightPrice();
     }else{
@@ -162,6 +144,7 @@ function allowDrop(ev) {
   function checkEndGame(){
     if (curLevel == level){
       document.getElementById("play-scr").style.display = 'none';
+      document.getElementById("loading-bar").style.display = 'none';
       document.getElementById("ending-message").innerHTML ="Chúc mừng bạn đã hoàn thành màn chơi với "+ failTimes +" lần sai !";
       document.getElementById("ending-scr").style.display = 'block';
     }
