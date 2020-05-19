@@ -106,7 +106,7 @@ function increaseScore() {
 
     if (score === MAX_SCORE) {
         setTimeout(function() {
-            window.location.replace("#");
+            window.location.replace("index_menu.html");
         }, 1000);
     }
     newGameStage();
